@@ -2,10 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useVisitorTracking } from '@/lib/useVisitorTracking';
 
 const Header = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [currentTime, setCurrentTime] = useState('');
+  
+  // Visitor tracking
+  const { visitorCount, isLoading: visitorLoading, error: visitorError } = useVisitorTracking({
+    roomId: 'general',
+    updateInterval: 30,
+    enabled: true
+  });
 
   useEffect(() => {
     const updateTime = () => {
@@ -51,6 +59,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="flex justify-between items-center p-4">
+        {/* Left side - Logo and visitor count */}
+        <div className="flex items-center space-x-3">
           <Image
             src="/icons/SVG/brands/bluesky.svg"
             alt="Bluesky"
@@ -58,9 +68,21 @@ const Header = () => {
             height={24}
             className="transition-all duration-300 bg-white"
           />
+          
+          {/* Visitor Counter - simple text */}
+          <div className="text-white/80 text-sm font-mono">
+            {visitorLoading ? (
+              <span>connecting<span className="animate-pulse">•••</span></span>
+            ) : visitorError ? (
+              <span>offline<span className="animate-pulse">•••</span></span>
+            ) : (
+              <span>listening now {visitorCount + 5}<span className="animate-pulse">•••</span></span>
+            )}
+          </div>
 
-          {/* Left side - Logo/Title with digital clock */}
-        <div className="flex items-center space-x-3">
+          </div>
+
+          <div className="flex items-center space-x-6">
           {/* Digital Clock */}
           <div className="digital-clock">
             <span className="time-display">

@@ -59,6 +59,80 @@ body {
   }
 }
 
+/* Visitor counter styles */
+.visitor-counter {
+  background: rgba(20, 0, 20, 0.8);
+  border: 2px solid #ff00ff;
+  border-radius: 4px;
+  padding: 6px 12px;
+  box-shadow: 
+    0 0 10px rgba(255, 0, 255, 0.5),
+    inset 0 0 5px rgba(255, 0, 255, 0.2);
+}
+
+.visitor-display {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ff00ff;
+  text-shadow: 
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff;
+  letter-spacing: 1px;
+  animation: visitorGlow 3s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.visitor-icon {
+  font-size: 14px;
+  filter: grayscale(1) sepia(1) hue-rotate(270deg) brightness(1.5);
+}
+
+.visitor-count {
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.visitor-label {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.loading-text {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.error-text {
+  color: #ff4444;
+  text-shadow: 0 0 5px #ff4444;
+  animation: errorBlink 1s ease-in-out infinite;
+}
+
+@keyframes visitorGlow {
+  0% { 
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    color: #ff00ff;
+  }
+  100% { 
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    color: #ff44ff;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes errorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
 /* Retro lofi player styles */
 
 /* Main container */
