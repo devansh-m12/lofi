@@ -62,7 +62,7 @@ const Header = () => {
         {/* Left side - Logo and visitor count */}
         <div className="flex items-center space-x-3">
           <Image
-            src="/icons/SVG/brands/bluesky.svg"
+            src="/bluesky.svg"
             alt="Bluesky"
             width={24}
             height={24}
@@ -106,7 +106,7 @@ const Header = () => {
             title="Toggle Fullscreen"
           >
             <Image
-              src="/icons/SVG/regular/expand.svg"
+              src="/expand.svg"
               alt="Fullscreen"
               width={24}
               height={24}
@@ -124,7 +124,7 @@ const Header = () => {
             title="Visit GitHub"
           >
             <Image
-              src="/icons/SVG/brands/github.svg"
+              src="/github.svg"
               alt="GitHub"
               width={24}
               height={24}
@@ -142,7 +142,7 @@ const Header = () => {
             title="Visit Twitter"
           >
             <Image
-              src="/icons/SVG/brands/x.svg"
+              src="/x.svg"
               alt="Twitter/X"
               width={24}
               height={24}
