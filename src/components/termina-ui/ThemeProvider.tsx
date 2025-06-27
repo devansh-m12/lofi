@@ -4,7 +4,6 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 import type { Theme } from '../../lib/types';
 import { matrixTheme } from './themes/matrix';
 import { amberTheme } from './themes/amber';
-import { cyberpunkTheme } from './themes/cyberpunk';
 import { spaceTheme } from './themes/space';
 import { synthwaveTheme } from './themes/synthwave';
 import { forestTheme } from './themes/forest';
@@ -21,9 +20,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 const AVAILABLE_THEMES = [
   matrixTheme,
   amberTheme,
-  cyberpunkTheme,
   spaceTheme,
-  synthwaveTheme,
   forestTheme,
   neonTheme
 ];

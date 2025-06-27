@@ -173,7 +173,7 @@ export function ChatCard() {
                 >
                   CONNECT
                 </button>
-                <div className="connection-test">
+                {/* <div className="connection-test">
                   <button
                     onClick={async () => {
                       const isConnected = await testConnection();
@@ -183,7 +183,7 @@ export function ChatCard() {
                   >
                     TEST CONNECTION
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           )}
@@ -261,7 +261,7 @@ export function ChatCard() {
           border: 1px solid var(--theme-border);
           color: var(--theme-text);
           font-family: var(--theme-font);
-          font-size: 12px;
+          font-size: 14px;
           z-index: 1000;
           display: flex;
           flex-direction: column;
@@ -286,7 +286,7 @@ export function ChatCard() {
         }
 
         .header-title {
-          font-size: 11px;
+          font-size: 13px;
           color: var(--theme-primary);
           font-weight: bold;
           display: flex;
@@ -340,9 +340,9 @@ export function ChatCard() {
         /* User Info */
         .user-info {
           padding: 6px 12px;
-          background: var(--theme-secondary);
+
           border-bottom: 1px solid var(--theme-border);
-          font-size: 10px;
+          font-size: 12px;
           color: var(--theme-text);
         }
 
@@ -356,10 +356,10 @@ export function ChatCard() {
         }
 
         .setup-header {
-          background: var(--theme-accent);
+          background: var(--theme-primary);
           color: var(--theme-background);
           padding: 4px 8px;
-          font-size: 10px;
+          font-size: 12px;
           font-weight: bold;
           text-align: center;
         }
@@ -376,7 +376,7 @@ export function ChatCard() {
           border: 1px solid var(--theme-border);
           color: var(--theme-text);
           padding: 8px;
-          font-size: 12px;
+          font-size: 14px;
           font-family: var(--theme-font);
           outline: none;
         }
@@ -391,7 +391,7 @@ export function ChatCard() {
           color: var(--theme-background);
           border: none;
           padding: 8px 12px;
-          font-size: 11px;
+          font-size: 13px;
           cursor: pointer;
           font-family: var(--theme-font);
           font-weight: bold;
@@ -434,7 +434,7 @@ export function ChatCard() {
           background: var(--theme-primary);
           color: var(--theme-background);
           padding: 4px 8px;
-          font-size: 10px;
+          font-size: 12px;
           font-weight: bold;
           text-align: center;
           display: flex;
@@ -467,7 +467,7 @@ export function ChatCard() {
 
         .message-line {
           margin: 2px 0;
-          font-size: 10px;
+          font-size: 12px;
           word-wrap: break-word;
           color: var(--theme-text);
           line-height: 1.3;
@@ -510,7 +510,7 @@ export function ChatCard() {
           border: 1px solid var(--theme-border);
           color: var(--theme-text);
           padding: 6px 8px;
-          font-size: 11px;
+          font-size: 13px;
           font-family: var(--theme-font);
           outline: none;
         }
@@ -535,7 +535,7 @@ export function ChatCard() {
           color: var(--theme-background);
           border: none;
           padding: 6px 12px;
-          font-size: 10px;
+          font-size: 12px;
           cursor: pointer;
           font-family: var(--theme-font);
           font-weight: bold;
