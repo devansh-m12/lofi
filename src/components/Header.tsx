@@ -1,10 +1,32 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const Header = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [currentTime, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      setCurrentTime(timeString);
+    };
+
+    // Update time immediately
+    updateTime();
+    
+    // Update time every second
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const toggleFullscreen = () => {
     if (!document.fullscreenElement) {
@@ -29,8 +51,6 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="flex justify-between items-center p-4">
-        {/* Left side - Logo/Title with retro 8-bit emojis */}
-        <div className="flex items-center space-x-2">
           <Image
             src="/icons/SVG/brands/bluesky.svg"
             alt="Bluesky"
@@ -38,6 +58,15 @@ const Header = () => {
             height={24}
             className="transition-all duration-300 bg-white"
           />
+
+          {/* Left side - Logo/Title with digital clock */}
+        <div className="flex items-center space-x-3">
+          {/* Digital Clock */}
+          <div className="digital-clock">
+            <span className="time-display">
+              {currentTime}
+            </span>
+          </div>
         </div>
 
         {/* Right side - Icon buttons */}
