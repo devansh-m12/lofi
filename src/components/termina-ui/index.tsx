@@ -6,6 +6,7 @@ import { STATIONS } from '../../lib/constants';
 import type { Station } from '../../lib/types';
 import { ThemeProvider, useTheme } from './ThemeProvider';
 import { ThemeSelector } from './ThemeSelector';
+import { ChatCard } from './ChatCard';
 
 const DEFAULT_STATION = STATIONS[0];
 
@@ -695,6 +696,9 @@ function TerminalUI() {
           }
         }
       `}</style>
+
+      {/* Chat Card */}
+      <ChatCard />
     </div>
   );
 }
