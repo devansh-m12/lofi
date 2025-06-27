@@ -82,6 +82,7 @@ const Header = () => {
 
           </div>
 
+
           <div className="flex items-center space-x-6">
           {/* Digital Clock */}
           <div className="digital-clock">
@@ -93,6 +94,11 @@ const Header = () => {
 
         {/* Right side - Icon buttons */}
         <div className="flex items-center space-x-4">
+
+          {/* Product Hunt Badge */}
+          <div className="flex items-center">
+          <a href="https://www.producthunt.com/products/lofi-radio?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-lofi&#0045;radio&#0045;3" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=984786&theme=dark&t=1751028798186" alt="Lofi&#0032;Radio - Retro&#0032;terminal&#0032;with&#0032;lofi&#0032;beats&#0032;&#0043;&#0032;live&#0032;chat&#0032;community | Product Hunt" style={{width: '250px', height: '37px'}} width="250" height="37" /></a>
+          </div>
           {/* Fullscreen button */}
           <button
             onClick={toggleFullscreen}
