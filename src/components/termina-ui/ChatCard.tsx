@@ -123,7 +123,7 @@ export function ChatCard() {
   return (
     <div className="chat-card">
       {/* Chat Header */}
-      <div className="chat-header">
+      <div className="chat-header" onClick={() => setIsMinimized(!isMinimized)}>
         <div className="header-title">
           <span>LIVE CHAT MODULE</span>
           <span className="status-indicator" style={{ color: getStatusColor() }}>
